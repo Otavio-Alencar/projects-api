@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@adonisjs/lucid/orm'
+import { MultipartFile } from '@adonisjs/core/bodyparser'
 
 export default class Project extends BaseModel {
   @column({ isPrimary: true })
@@ -9,7 +10,7 @@ export default class Project extends BaseModel {
   declare title: string
 
   @column()
-  declare url: string
+  declare url: MultipartFile
 
   @column()
   declare description: string
