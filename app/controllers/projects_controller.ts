@@ -30,4 +30,10 @@ export default class ProjectsController {
 
     return { project }
   }
+
+  async getProject() {
+    const projects = await Project.all()
+
+    return projects
+  }
 }

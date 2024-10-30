@@ -19,3 +19,8 @@ router.post('/project', [ProjectsController, 'sendProject']).use(
     guards: ['api'],
   })
 )
+router.get('/project', [ProjectsController, 'getProject']).use(
+  middleware.auth({
+    guards: ['api'],
+  })
+)
