@@ -1,7 +1,6 @@
 import Project from '#models/project'
 import { ProjectValidator } from '#validators/project'
 import type { HttpContext } from '@adonisjs/core/http'
-import app from '@adonisjs/core/services/app'
 
 export default class ProjectsController {
   async sendProject({ request, response }: HttpContext) {
@@ -25,8 +24,6 @@ export default class ProjectsController {
       title: body.title,
       description: body.description,
     })
-
-    // await url.move(app.makePath('storage/uploads'))
 
     return { project }
   }
